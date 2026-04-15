@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suresh Chand — Director of IT | Cloud, Security & Infrastructure</title>
+<meta name="description" content="Suresh Chand — Director-level IT leader with 20+ years in hybrid cloud, identity management, PCI DSS compliance, and enterprise infrastructure. San Jose, CA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─── DESIGN TOKENS ─────────────────────────────────────────────── */
+:root {
+  --bg:           #060912;
+  --bg-card:      #0C1220;
+  --bg-card-2:    #101828;
+  --border:       rgba(255,255,255,0.06);
+  --border-lit:   rgba(0,196,232,0.3);
+  --cyan:         #00C4E8;
+  --cyan-dim:     rgba(0,196,232,0.12);
+  --amber:        #F0A030;
+  --amber-dim:    rgba(240,160,48,0.12);
+  --green:        #22D3A0;
+  --text-1:       #EEF1FA;
+  --text-2:       #8B93B0;
+  --text-3:       #555E7A;
+  --heading:      'Sora', sans-serif;
+  --body:         'DM Sans', sans-serif;
+  --mono:         'Fira Code', monospace;
+  --ease-out:     cubic-bezier(0.16,1,0.3,1);
+}
+
+/* ─── RESET & BASE ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+a { color: var(--cyan); text-decoration: none; transition: opacity .2s; }
+a:hover { opacity: 0.75; }
+
+/* ─── BACKGROUND GRID ────────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,196,232,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,196,232,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── LAYOUT UTILITIES ───────────────────────────────────────────── */
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.section { padding: 96px 0; }
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--cyan);
+}
+.section-title {
+  font-family: var(--heading);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 1.15;
+  margin-bottom: 48px;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ─── NAV ────────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(6,9,18,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background .3s;
+}
+.nav-logo {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--cyan); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  letter-spacing: 0.03em;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text-1); opacity: 1; }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 18px;
+  border: 1px solid var(--cyan);
+  border-radius: 4px;
+  color: var(--cyan) !important;
+  letter-spacing: 0.05em;
+  transition: background .2s, color .2s !important;
+}
+.nav-cta:hover { background: var(--cyan); color: var(--bg) !important; opacity: 1 !important; }
+
+/* ─── HERO ───────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--cyan);
+  letter-spacing: 0.12em;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--cyan);
+}
+.hero-name {
+  font-family: var(--heading);
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--text-1) 40%, var(--text-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-title {
+  font-family: var(--heading);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 400;
+  color: var(--amber);
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+.hero-desc {
+  font-size: 17px;
+  color: var(--text-2);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-family: var(--heading);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  transition: transform .2s var(--ease-out), box-shadow .2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,196,232,0.35); opacity: 1; color: var(--bg); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: transparent;
+  color: var(--text-1);
+  font-family: var(--heading);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border-lit);
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  transition: border-color .2s, background .2s;
+}
+.btn-secondary:hover { border-color: var(--cyan); background: var(--cyan-dim); opacity: 1; }
+.hero-stats {
+  display: flex;
+  gap: 40px;
+}
+.stat-item { }
+.stat-num {
+  font-family: var(--heading);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--cyan);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Hero image / badge panel */
+.hero-badge-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 240px;
+}
+.badge-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: border-color .2s, transform .2s;
+}
+.badge-card:hover { border-color: var(--border-lit); transform: translateX(-4px); }
+.badge-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.badge-icon.cyan  { background: var(--cyan-dim); }
+.badge-icon.amber { background: var(--amber-dim); }
+.badge-icon.green { background: rgba(34,211,160,0.1); }
+.badge-text-main { font-size: 13px; font-weight: 600; color: var(--text-1); }
+.badge-text-sub  { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  margin-left: auto;
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Hero image */
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+}
+.hero-img-wrap img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+.hero-img-placeholder {
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0C1828 0%, #0F2040 100%);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-3);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+}
+.hero-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,196,232,0.08) 0%, transparent 70%);
+}
+
+/* ─── ABOUT ──────────────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.about-text p {
+  color: var(--text-2);
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.about-text p:last-child { margin-bottom: 0; }
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.highlight-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 20px;
+}
+.highlight-item.amber { border-left-color: var(--amber); }
+.highlight-item.green { border-left-color: var(--green); }
+.highlight-title { font-weight: 600; font-size: 14px; color: var(--text-1); margin-bottom: 4px; }
+.highlight-desc  { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+/* ─── SKILLS ─────────────────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.skill-category {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color .25s, transform .25s var(--ease-out);
+}
+.skill-category:hover {
+  border-color: var(--border-lit);
+  transform: translateY(-4px);
+}
+.skill-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.skill-cat-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background: var(--cyan-dim);
+}
+.skill-cat-icon.amber { background: var(--amber-dim); }
+.skill-cat-icon.green { background: rgba(34,211,160,0.1); }
+.skill-cat-icon.purple { background: rgba(139,92,246,0.1); }
+.skill-cat-name {
+  font-family: var(--heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-1);
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-2);
+  letter-spacing: 0.02em;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.skill-tag:hover {
+  border-color: rgba(0,196,232,0.4);
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+/* ─── EXPERIENCE TIMELINE ────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--cyan), transparent);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -37px;
+  top: 6px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0,196,232,0.15);
+}
+.timeline-dot.past { background: var(--text-3); box-shadow: none; }
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.timeline-date {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
+  letter-spacing: 0.05em;
+}
+.timeline-badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.timeline-badge.current { background: rgba(34,211,160,0.15); color: var(--green); }
+.timeline-badge.fintech  { background: var(--amber-dim); color: var(--amber); }
+.timeline-badge.saas     { background: rgba(139,92,246,0.15); color: #A78BFA; }
+.timeline-badge.msp      { background: rgba(59,130,246,0.15); color: #60A5FA; }
+.timeline-role {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.timeline-company {
+  font-size: 14px;
+  color: var(--cyan);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.timeline-company .location {
+  color: var(--text-3);
+  font-size: 13px;
+}
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  transition: border-color .2s;
+}
+.timeline-card:hover { border-color: var(--border-lit); }
+.timeline-section-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 20px 0 10px;
+}
+.timeline-section-title:first-child { margin-top: 0; }
+.timeline-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.timeline-bullets li {
+  font-size: 14px;
+  color: var(--text-2);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.6;
+}
+.timeline-bullets li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: 700;
+}
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.t-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  background: var(--cyan-dim);
+  border: 1px solid rgba(0,196,232,0.2);
+  border-radius: 3px;
+  color: var(--cyan);
+  letter-spacing: 0.04em;
+}
+.t-tag.amber {
+  background: var(--amber-dim);
+  border-color: rgba(240,160,48,0.2);
+  color: var(--amber);
+}
+
+/* ─── PROJECTS ───────────────────────────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+}
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color .25s, transform .25s var(--ease-out);
+  text-decoration: none;
+}
+.project-card:hover {
+  border-color: var(--border-lit);
+  transform: translateY(-4px);
+  opacity: 1;
+}
+.project-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.project-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  background: var(--cyan-dim);
+}
+.project-icon.amber  { background: var(--amber-dim); }
+.project-icon.green  { background: rgba(34,211,160,0.1); }
+.project-icon.purple { background: rgba(139,92,246,0.12); }
+.project-icon.red    { background: rgba(239,68,68,0.1); }
+.project-arrow {
+  font-size: 16px;
+  color: var(--text-3);
+  margin-top: 4px;
+  transition: color .2s, transform .2s;
+}
+.project-card:hover .project-arrow { color: var(--cyan); transform: translate(3px,-3px); }
+.project-name {
+  font-family: var(--heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-1);
+}
+.project-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.65;
+  flex: 1;
+}
+.project-langs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.lang-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-3);
+}
+
+/* ─── EDUCATION ──────────────────────────────────────────────────── */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.edu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color .2s;
+}
+.edu-card:hover { border-color: var(--border-lit); }
+.edu-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: var(--cyan-dim);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.edu-icon.amber { background: var(--amber-dim); }
+.edu-degree { font-size: 15px; font-weight: 600; color: var(--text-1); margin-bottom: 4px; }
+.edu-school { font-size: 13px; color: var(--cyan); }
+.edu-note   { font-size: 12px; color: var(--text-3); margin-top: 4px; }
+
+/* ─── CONTACT ────────────────────────────────────────────────────── */
+.contact-section {
+  text-align: center;
+  padding: 96px 0;
+}
+.contact-glow {
+  display: inline-block;
+  position: relative;
+}
+.contact-glow::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(ellipse, rgba(0,196,232,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.contact-title {
+  font-family: var(--heading);
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.contact-sub {
+  font-size: 17px;
+  color: var(--text-2);
+  max-width: 480px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.contact-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.contact-link:hover {
+  border-color: var(--border-lit);
+  color: var(--text-1);
+  background: var(--bg-card-2);
+  opacity: 1;
+}
+.contact-link svg { flex-shrink: 0; }
+
+/* ─── FOOTER ─────────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
+  letter-spacing: 0.04em;
+}
+footer a { color: var(--text-3); }
+footer a:hover { color: var(--cyan); opacity: 1; }
+
+/* ─── SCROLL ANIMATIONS ──────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-badge-panel { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .nav-links { display: none; }
+  .hero-stats { gap: 24px; }
+}
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+  .hero-name { font-size: 42px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+/* ─── CONTACT FORM ───────────────────────────────────────────────── */
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.form-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--text-1);
+  width: 100%;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+.form-input::placeholder { color: var(--text-3); }
+.form-input:focus {
+  border-color: var(--border-lit);
+  box-shadow: 0 0 0 3px rgba(0,196,232,0.08);
+}
+.form-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-family: var(--heading);
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: transform .2s var(--ease-out), box-shadow .2s, opacity .2s;
+  width: 100%;
+  justify-content: center;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,196,232,0.3); }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 600px) {
+  #contact-form > div:first-of-type { grid-template-columns: 1fr !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">Suresh<span>.</span>Chand</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:suresh@echand.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">San Jose, CA · Available for Consulting</div>
+        <h1 class="hero-name">Suresh<br>Chand</h1>
+        <div class="hero-title">Director of IT · Cloud · Security</div>
+        <p class="hero-desc">
+          20+ years building, securing, and operating enterprise infrastructure across Microsoft and Linux environments.
+          Deep hands-on expertise in hybrid cloud architecture, identity management, PCI DSS 4.0.1, and DevOps.
+        </p>
+        <div class="hero-actions">
+          <a href="#experience" class="btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
+            View Experience
+          </a>
+          <a href="#projects" class="btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub Portfolio
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">20+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">20</div>
+            <div class="stat-label">GitHub Repos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">PCI</div>
+            <div class="stat-label">DSS 4.0.1 Certified</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-badge-panel">
+        <!-- Replace hero-img-placeholder with <img src="assets/images/hero-banner.webp"> when ready -->
+        <div class="hero-img-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,196,232,0.4)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span>hero-banner.webp</span>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon cyan">🛡️</div>
+          <div>
+            <div class="badge-text-main">PCI DSS 4.0.1</div>
+            <div class="badge-text-sub">Fully led · Audit passed</div>
+          </div>
+          <div class="status-dot"></div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon amber">☁️</div>
+          <div>
+            <div class="badge-text-main">Hybrid Cloud</div>
+            <div class="badge-text-sub">Azure · OCI · On-Prem</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon green">🔑</div>
+          <div>
+            <div class="badge-text-main">Microsoft Entra ID</div>
+            <div class="badge-text-sub">Conditional Access · MFA</div>
+          </div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon cyan">🐳</div>
+          <div>
+            <div class="badge-text-main">Docker · Linux</div>
+            <div class="badge-text-sub">Production-grade stacks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────────── -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Built for both the boardroom<br>and the terminal.</h2>
+    <div class="about-grid fade-up">
+      <div class="about-text">
+        <p>
+          I'm a Director-level IT leader with 20+ years of hands-on experience designing, securing, and operating enterprise infrastructure across Microsoft and Linux environments. My background spans fintech, SaaS, healthcare, and SMB — from a 9-year Unix systems lead at a risk analytics SaaS company to building out an entire IT and security function at a fintech startup from the ground up.
+        </p>
+        <p>
+          I led Paynuity through a full PCI DSS 4.0.1 certification cycle — gap analysis, remediation, documentation, audit, done. I'm not just a manager who delegates it; I wrote the PowerShell scripts, mapped the controls, built the evidence repository, and sat in the audit room.
+        </p>
+        <p>
+          On Upwork I take on consulting work across M365 administration, email deliverability, Entra ID / Intune configuration, Linux infrastructure, and Docker-based stack deployments. I build things that actually run in production.
+        </p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-title">PCI DSS 4.0.1 — Full Lifecycle</div>
+          <div class="highlight-desc">Gap analysis → remediation → SOPs → audit evidence → certification. All applicable requirements passed at Paynuity.</div>
+        </div>
+        <div class="highlight-item amber">
+          <div class="highlight-title">Resolved a Company-Wide Email Outage</div>
+          <div class="highlight-desc">Root-caused and fixed a sensitivity label encryption misconfiguration that took down all outbound email. Full Exchange Online + OME diagnosis.</div>
+        </div>
+        <div class="highlight-item green">
+          <div class="highlight-title">Fractional IT Director · Upwork Consulting</div>
+          <div class="highlight-desc">Available for M365, Entra ID, Intune, email security, Linux infrastructure, and compliance engagements. Remote · Bay Area.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── SKILLS ────────────────────────────────────────────────────── -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-label">Technical Stack</div>
+    <h2 class="section-title">Core Competencies</h2>
+    <div class="skills-grid">
+      <!-- Microsoft / Identity -->
+      <div class="skill-category fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🪟</div>
+          <div class="skill-cat-name">Microsoft 365 &amp; Identity</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Entra ID</span>
+          <span class="skill-tag">Conditional Access</span>
+          <span class="skill-tag">MFA</span>
+          <span class="skill-tag">Microsoft Intune</span>
+          <span class="skill-tag">Exchange Online</span>
+          <span class="skill-tag">SharePoint</span>
+          <span class="skill-tag">Teams</span>
+          <span class="skill-tag">Microsoft Defender</span>
+          <span class="skill-tag">Microsoft Purview</span>
+          <span class="skill-tag">Active Directory</span>
+          <span class="skill-tag">PowerShell</span>
+          <span class="skill-tag">Graph API</span>
+        </div>
+      </div>
+      <!-- Linux & DevOps -->
+      <div class="skill-category fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon amber">🐧</div>
+          <div class="skill-cat-name">Linux &amp; DevOps</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Ubuntu 22.04 / 24.04</span>
+          <span class="skill-tag">Fedora CoreOS</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Docker Compose</span>
+          <span class="skill-tag">Podman</span>
+          <span class="skill-tag">NGINX</span>
+          <span class="skill-tag">Prometheus</span>
+          <span class="skill-tag">Grafana</span>
+          <span class="skill-tag">Alertmanager</span>
+          <span class="skill-tag">Loki</span>
+          <span class="skill-tag">Wazuh</span>
+          <span class="skill-tag">Elasticsearch</span>
+          <span class="skill-tag">WSL2</span>
+          <span class="skill-tag">systemd</span>
+        </div>
+      </div>
+      <!-- Security & Compliance -->
+      <div class="skill-category fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon green">🔒</div>
+          <div class="skill-cat-name">Security &amp; Compliance</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">PCI DSS 4.0.1</span>
+          <span class="skill-tag">CIS Benchmarks</span>
+          <span class="skill-tag">NIST CSF</span>
+          <span class="skill-tag">DKIM / DMARC / SPF</span>
+          <span class="skill-tag">OME</span>
+          <span class="skill-tag">Kali Linux</span>
+          <span class="skill-tag">Penetration Testing</span>
+          <span class="skill-tag">Vulnerability Assessment</span>
+          <span class="skill-tag">FreeRADIUS</span>
+          <span class="skill-tag">SSH Hardening</span>
+          <span class="skill-tag">fail2ban</span>
+        </div>
+      </div>
+      <!-- Virtualization -->
+      <div class="skill-category fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon purple">🖥️</div>
+          <div class="skill-cat-name">Virtualization &amp; Hypervisors</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">VMware ESXi</span>
+          <span class="skill-tag">VMware vSphere</span>
+          <span class="skill-tag">vCenter Server</span>
+          <span class="skill-tag">vMotion</span>
+          <span class="skill-tag">HA / DRS</span>
+          <span class="skill-tag">Microsoft Hyper-V</span>
+          <span class="skill-tag">Hyper-V Clustering</span>
+          <span class="skill-tag">Proxmox VE</span>
+          <span class="skill-tag">VM Templates</span>
+          <span class="skill-tag">Snapshots</span>
+          <span class="skill-tag">Storage vMotion</span>
+          <span class="skill-tag">VM Backup &amp; Recovery</span>
+        </div>
+      </div>
+      <!-- Infrastructure -->
+      <div class="skill-category fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon purple">🏗️</div>
+          <div class="skill-cat-name">Infrastructure &amp; Networking</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Windows Server</span>
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">OCI</span>
+          <span class="skill-tag">Cisco ASA</span>
+          <span class="skill-tag">FortiGate</span>
+          <span class="skill-tag">Juniper</span>
+          <span class="skill-tag">DNS / Cloudflare</span>
+          <span class="skill-tag">Technitium DNS</span>
+          <span class="skill-tag">NGINX Proxy Manager</span>
+          <span class="skill-tag">Portainer</span>
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">MariaDB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── EXPERIENCE ────────────────────────────────────────────────── -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-label">Career History</div>
+    <h2 class="section-title">20+ Years of Hands-On IT Leadership</h2>
+
+    <div class="timeline">
+
+      <!-- Paynuity -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">DEC 2022 – SEPT 2025</span>
+          <span class="timeline-badge fintech">Fintech</span>
+          <span class="timeline-badge current">Most Recent</span>
+        </div>
+        <div class="timeline-role">Director of IT</div>
+        <div class="timeline-company">
+          Paynuity, Inc.
+          <span class="location">· Remote / San Jose, CA</span>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-section-title">PCI DSS 4.0.1 Readiness &amp; Certification</div>
+          <ul class="timeline-bullets">
+            <li>Led organization through full PCI DSS 4.0.1 certification — all applicable requirements passed.</li>
+            <li>Owned complete compliance lifecycle: gap analysis, remediation, SOPs, evidence repository, and audit readiness.</li>
+            <li>Built PowerShell automation scripts for CIS benchmark checks and PCI control validation.</li>
+            <li>Authored all audit documentation and compliance trackers used during the certification cycle.</li>
+          </ul>
+          <div class="timeline-section-title">Identity &amp; Security Architecture</div>
+          <ul class="timeline-bullets">
+            <li>Designed and enforced Microsoft Entra ID Conditional Access policies — MFA, session controls, risk-based access.</li>
+            <li>Hardened endpoint security via Intune and Defender for Endpoint.</li>
+            <li>Conducted internal penetration testing using Kali Linux to validate security controls for PCI certification.</li>
+            <li>Resolved complex authentication and session issues across the M365 tenant.</li>
+          </ul>
+          <div class="timeline-section-title">Infrastructure, Virtualization, Monitoring &amp; M365</div>
+          <ul class="timeline-bullets">
+            <li>Architected hybrid infrastructure spanning On-Prem, Microsoft Azure, and Oracle Cloud Infrastructure (OCI).</li>
+            <li>Managed VMware ESXi/vSphere and Hyper-V environments; deployed and maintained VMs for production and lab workloads.</li>
+            <li>Used Proxmox VE for internal lab virtualization, containerization testing, and Fedora CoreOS deployments.</li>
+            <li>Built containerized IT stack: NGINX Proxy Manager, Portainer, Technitium DNS (Docker Compose).</li>
+            <li>Designed full observability stack: Prometheus, Grafana, Alertmanager with Telegram alerting.</li>
+            <li>Root-caused and resolved a company-wide email outage caused by sensitivity label encryption misconfiguration.</li>
+            <li>Implemented DKIM, DMARC, and SPF across all sending domains.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="t-tag">PCI DSS 4.0.1</span>
+            <span class="t-tag">Entra ID</span>
+            <span class="t-tag">Intune</span>
+            <span class="t-tag">Kali Linux</span>
+            <span class="t-tag">VMware ESXi</span>
+            <span class="t-tag">Hyper-V</span>
+            <span class="t-tag">Proxmox VE</span>
+            <span class="t-tag">Docker</span>
+            <span class="t-tag">Prometheus</span>
+            <span class="t-tag">Azure</span>
+            <span class="t-tag">OCI</span>
+            <span class="t-tag">PowerShell</span>
+            <span class="t-tag amber">DKIM/DMARC/SPF</span>
+            <span class="t-tag amber">Exchange Online</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SignMySigns -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot past"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">JUL 2014 – NOV 2022</span>
+        </div>
+        <div class="timeline-role">Senior Cloud &amp; Systems Administrator</div>
+        <div class="timeline-company">
+          SignMySigns
+          <span class="location">· San Jose, CA</span>
+        </div>
+        <div class="timeline-card">
+          <ul class="timeline-bullets">
+            <li>Managed hybrid infrastructure across Windows Server and Linux systems for 8+ years.</li>
+            <li>Administered Microsoft 365: Exchange Online, SharePoint, Entra ID, full lifecycle ownership.</li>
+            <li>Implemented SPF, DKIM, and DMARC for all company domains.</li>
+            <li>Designed and maintained backup and disaster recovery strategy.</li>
+            <li>Managed VMware ESXi/vSphere environment from initial company deployment — built out and maintained the full virtual infrastructure stack including vCenter, vMotion, and HA/DRS configurations.</li>
+            <li>Administered Microsoft Hyper-V alongside VMware; managed VM provisioning, snapshots, templates, and storage.</li>
+            <li>Managed DNS, Cloudflare integrations, and domain administration.</li>
+            <li>Owned full IT lifecycle: procurement, deployment, maintenance, and asset refresh.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="t-tag">Microsoft 365</span>
+            <span class="t-tag">VMware ESXi</span>
+            <span class="t-tag">vSphere</span>
+            <span class="t-tag">Hyper-V</span>
+            <span class="t-tag">Windows Server</span>
+            <span class="t-tag amber">Email Security</span>
+            <span class="t-tag amber">Cloudflare</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nomis Solutions -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot past"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">NOV 2007 – JUL 2014</span>
+          <span class="timeline-badge saas">SaaS</span>
+        </div>
+        <div class="timeline-role">Senior IT &amp; Services Manager<br><span style="font-weight:400;font-size:18px;">Unix Systems Administrator Lead</span></div>
+        <div class="timeline-company">
+          Nomis Solutions
+          <span class="location">· San Bruno, CA</span>
+        </div>
+        <div class="timeline-card">
+          <ul class="timeline-bullets">
+            <li>Managed hybrid on-prem + AWS infrastructure supporting enterprise SaaS pricing platforms.</li>
+            <li>Led Unix/Linux system administration for production systems serving major financial institutions.</li>
+            <li>Played cross-functional role across IT support, sales engineering, and DevOps.</li>
+            <li>Supported deployments and production systems for enterprise applications.</li>
+            <li>Implemented monitoring, patching, and operational runbook processes.</li>
+            <li>Owned full infrastructure lifecycle: procurement, deployment, upgrades, and refresh.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="t-tag">Unix / Linux</span>
+            <span class="t-tag">AWS</span>
+            <span class="t-tag">SaaS Infrastructure</span>
+            <span class="t-tag amber">Sales Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Allcovered -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot past"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">JUN 2004 – NOV 2007</span>
+          <span class="timeline-badge msp">MSP</span>
+        </div>
+        <div class="timeline-role">Senior Windows / Linux Consultant</div>
+        <div class="timeline-company">
+          Allcovered (Konica Minolta IT Services)
+          <span class="location">· Various Client Sites</span>
+        </div>
+        <div class="timeline-card">
+          <ul class="timeline-bullets">
+            <li>Independently managed 10+ client environments across Windows and Linux platforms.</li>
+            <li>Led migrations, upgrades, and security remediation across diverse client environments.</li>
+            <li>Delivered solutions for clients including Genentech, BioMarin Pharmaceutical, CareDx, Intersect ENT, Pacific BioLab, and Clinimetrics (Omnicare).</li>
+            <li>Provided advanced troubleshooting for production systems with SLA accountability.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="t-tag">Multi-Client MSP</span>
+            <span class="t-tag">Windows</span>
+            <span class="t-tag">Linux</span>
+            <span class="t-tag amber">Life Sciences Clients</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- KnowNow -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot past"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">FEB 2001 – JUN 2004</span>
+        </div>
+        <div class="timeline-role">Director of IT</div>
+        <div class="timeline-company">
+          KnowNow
+          <span class="location">· Sunnyvale, CA</span>
+        </div>
+        <div class="timeline-card">
+          <ul class="timeline-bullets">
+            <li>Led IT operations and infrastructure for a real-time messaging technology company.</li>
+            <li>Supported engineering teams with scalable, reliable systems.</li>
+            <li>Managed network, server, and application infrastructure end-to-end.</li>
+            <li>Owned procurement, vendor management, and IT strategy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDS -->
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot past"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">APR 1992 – FEB 2001</span>
+        </div>
+        <div class="timeline-role">Windows / Linux Consultant</div>
+        <div class="timeline-company">
+          EDS (Electronic Data Systems)
+          <span class="location">· Various Locations</span>
+        </div>
+        <div class="timeline-card">
+          <ul class="timeline-bullets">
+            <li>Delivered enterprise consulting across Windows and Unix/Linux systems for 9 years.</li>
+            <li>Performed deployments, upgrades, and troubleshooting across large enterprise environments.</li>
+            <li>Supported networking and server infrastructure projects for major EDS clients.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── PROJECTS ──────────────────────────────────────────────────── -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-label">Open Source</div>
+    <h2 class="section-title">GitHub Portfolio</h2>
+    <div class="projects-grid">
+
+      <a href="https://github.com/suresh-1001/m365-cis-assessor" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon">🛡️</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">M365 CIS Assessor</div>
+        <div class="project-desc">Automated Microsoft 365 security assessment aligned to CIS Foundations Benchmark v6.0.1. Certificate-based auth, 65 controls across Entra ID/Exchange/Teams/SharePoint, HTML dashboard output.</div>
+        <div class="project-langs">
+          <span class="lang-badge">PowerShell</span>
+          <span class="lang-badge">GitHub Actions</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/prometheus-grafana-stack" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon green">📊</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Prometheus + Grafana Stack</div>
+        <div class="project-desc">Production-ready observability stack — Docker Compose + bare metal installer. Prometheus, Grafana, Alertmanager, Loki, Promtail, cAdvisor. Pre-wired dashboards and 17 alert rules with Email + Slack.</div>
+        <div class="project-langs">
+          <span class="lang-badge">Shell</span>
+          <span class="lang-badge">YAML</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/m365-intune-device-management-baseline" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon amber">💻</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Intune Device Management Baseline</div>
+        <div class="project-desc">Full Intune deployment for a 14-device SMB — Azure AD Join, device restriction policies, app control, USB blocking, Edge lockdown. Includes PowerShell audit script and staged rollout playbook.</div>
+        <div class="project-langs">
+          <span class="lang-badge">PowerShell</span>
+          <span class="lang-badge">JSON Policies</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/linux-cis-audit" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon green">🔒</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Linux CIS Audit</div>
+        <div class="project-desc">CIS Benchmark audit and remediation for Linux servers. 68+ controls across Level 1 &amp; 2. Markdown report with pass/fail scoring and letter grade. Optional --fix mode. Ubuntu/Debian + RHEL/Alma/Rocky.</div>
+        <div class="project-langs">
+          <span class="lang-badge">Shell</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/linux-server-onboarding-baseline" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon">🔐</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Linux Server Onboarding Baseline</div>
+        <div class="project-desc">One script to harden a fresh Linux server in under 5 minutes — hostname, SSH, firewall, fail2ban, NTP, auto-updates, MOTD. Includes rootkit scanner with email reporting. Fully idempotent.</div>
+        <div class="project-langs">
+          <span class="lang-badge">Shell</span>
+          <span class="lang-badge">SSH Config</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/pci-dss-certification-automation" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon amber">📋</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">PCI DSS Certification Automation</div>
+        <div class="project-desc">PowerShell automation framework for PCI DSS 4.0.1 control validation, evidence collection, and audit-ready documentation generation. Built from a real certification engagement.</div>
+        <div class="project-langs">
+          <span class="lang-badge">PowerShell</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/db-admin-toolkit" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon purple">🗄️</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Database Admin Toolkit</div>
+        <div class="project-desc">Install, administer, backup, and audit SQL Server, MySQL, and PostgreSQL — one toolkit, all three engines. Bash + PowerShell + SQL scripts. Auto-detection, health checks, S3 backup support.</div>
+        <div class="project-langs">
+          <span class="lang-badge">Shell</span>
+          <span class="lang-badge">PowerShell</span>
+          <span class="lang-badge">TSQL</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/azure-it-admin-baseline" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon">☁️</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Azure IT Admin Baseline</div>
+        <div class="project-desc">Complete Azure administration engagement — RBAC, Conditional Access, Microsoft Defender (42% → 81% Secure Score), NSG configuration, network troubleshooting playbook, and support ticket automation.</div>
+        <div class="project-langs">
+          <span class="lang-badge">PowerShell</span>
+          <span class="lang-badge">JSON</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/linux-auto-debug" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon green">🩺</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Linux Auto-Debug &amp; Self-Heal</div>
+        <div class="project-desc">Portable Bash triage script for production Linux servers. Read-only diagnostics or --apply self-healing mode. Covers disk, services, DNS, NTP, logs. Plain-English verdict output. Zero external dependencies.</div>
+        <div class="project-langs">
+          <span class="lang-badge">Shell</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/email-authentication-audit-toolkit" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon amber">📧</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Email Authentication Audit Toolkit</div>
+        <div class="project-desc">Comprehensive audit and validation toolkit for SPF, DKIM, and DMARC configurations. Identifies misconfigurations, Cloudflare DNS conflicts, and deliverability gaps with actionable remediation guidance.</div>
+        <div class="project-langs">
+          <span class="lang-badge">PowerShell</span>
+          <span class="lang-badge">Shell</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/Secure-Windows-Baseline-Framework" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon red">🔰</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">Secure Windows Baseline Framework</div>
+        <div class="project-desc">Security hardening framework for Windows Server environments. CIS-aligned configurations, GPO templates, registry settings, and audit checklist for enterprise Windows deployments.</div>
+        <div class="project-langs">
+          <span class="lang-badge">PowerShell</span>
+          <span class="lang-badge">GPO</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/suresh-1001/case-studies" target="_blank" class="project-card">
+        <div class="project-card-top">
+          <div class="project-icon purple">📁</div>
+          <div class="project-arrow">↗</div>
+        </div>
+        <div class="project-name">IT Case Studies</div>
+        <div class="project-desc">Documented case studies from real consulting engagements — M365 migrations, email outage diagnosis, Intune deployments, and PCI compliance projects. Redacted for client confidentiality.</div>
+        <div class="project-langs">
+          <span class="lang-badge">Markdown</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://github.com/suresh-1001" target="_blank" class="btn-secondary" style="display:inline-flex;">
+        View All 20 Repos on GitHub ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── EDUCATION ─────────────────────────────────────────────────── -->
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-label">Academic</div>
+    <h2 class="section-title">Education &amp; Training</h2>
+    <div class="edu-grid">
+      <div class="edu-card fade-up">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-degree">Business Administration</div>
+          <div class="edu-school">Evergreen Valley College</div>
+          <div class="edu-note">San Jose, CA</div>
+        </div>
+      </div>
+      <div class="edu-card fade-up">
+        <div class="edu-icon amber">🎓</div>
+        <div>
+          <div class="edu-degree">Machine Learning &amp; Artificial Intelligence</div>
+          <div class="edu-school">Foothill College</div>
+          <div class="edu-note">Los Altos Hills, CA</div>
+        </div>
+      </div>
+      <div class="edu-card fade-up">
+        <div class="edu-icon">📚</div>
+        <div>
+          <div class="edu-degree">Planned Transfer</div>
+          <div class="edu-school">San José State University</div>
+          <div class="edu-note">San Jose, CA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── CONTACT ───────────────────────────────────────────────────── -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-glow">
+      <div class="section-label" style="justify-content:center;">Let's Work Together</div>
+      <h2 class="contact-title">Available for<br>Consulting Engagements</h2>
+      <p class="contact-sub">
+        Open to Upwork contracts, fractional Director of IT engagements, and direct project work across M365, Azure, Linux, and security/compliance.
+      </p>
+
+      <!-- Quick contact links -->
+      <div class="contact-links" style="margin-bottom:48px;">
+        <a href="mailto:suresh@echand.com" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          suresh@echand.com
+        </a>
+        <a href="https://www.linkedin.com/in/sureshchand01" target="_blank" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/suresh-1001" target="_blank" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="tel:+14084207085" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          (408) 420-7085
+        </a>
+      </div>
+
+      <!-- ─ Web3Forms Contact Form ─ -->
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" style="max-width:640px;margin:0 auto;text-align:left;">
+        <input type="hidden" name="access_key" value="2be1a779-3d6d-4e64-a281-cbe41a32fae1">
+        <input type="hidden" name="subject" value="Portfolio Contact — Suresh Chand">
+        <input type="hidden" name="from_name" value="Portfolio Contact Form">
+        <!-- Honeypot -->
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" placeholder="Your name" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" placeholder="your@email.com" required class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom:16px;">
+          <label class="form-label">Subject</label>
+          <input type="text" name="subject_detail" placeholder="e.g. M365 Admin · Upwork contract · Intune deployment" class="form-input">
+        </div>
+
+        <div class="form-group" style="margin-bottom:24px;">
+          <label class="form-label">Message</label>
+          <textarea name="message" placeholder="Tell me what you need..." required rows="5" class="form-input form-textarea"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="submit-btn">
+          <span id="btn-text">Send Message</span>
+          <svg id="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <svg id="btn-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none;animation:spin .8s linear infinite;"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </button>
+
+        <div id="form-success" style="display:none;margin-top:20px;padding:16px 20px;background:rgba(34,211,160,0.1);border:1px solid rgba(34,211,160,0.3);border-radius:8px;color:#22D3A0;font-size:14px;text-align:center;">
+          ✅ Message sent — I'll get back to you shortly.
+        </div>
+        <div id="form-error" style="display:none;margin-top:20px;padding:16px 20px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;color:#F87171;font-size:14px;text-align:center;">
+          ⚠️ Something went wrong. Please email me directly at suresh@echand.com
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+<footer>
+  <div>
+    Suresh Chand · San Jose, CA ·
+    <a href="mailto:suresh@echand.com">suresh@echand.com</a> ·
+    <a href="https://linesightdigital.com" target="_blank">linesightdigital.com</a>
+  </div>
+</footer>
+
+<!-- ─── SCROLL ANIMATIONS ─────────────────────────────────────────── -->
+<script>
+// Scroll animations
+const observer = new IntersectionObserver(
+  (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } }),
+  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+);
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Web3Forms handler
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn     = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const spinner = document.getElementById('btn-spinner');
+    const success = document.getElementById('form-success');
+    const error   = document.getElementById('form-error');
+
+    btn.disabled = true;
+    btnText.textContent = 'Sending…';
+    btnIcon.style.display = 'none';
+    spinner.style.display = 'inline';
+    success.style.display = 'none';
+    error.style.display   = 'none';
+
+    try {
+      const data = new FormData(form);
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        success.style.display = 'block';
+        form.reset();
+      } else {
+        error.style.display = 'block';
+      }
+    } catch (err) {
+      error.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = 'Send Message';
+      btnIcon.style.display = 'inline';
+      spinner.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
