@@ -872,10 +872,8 @@ footer a:hover { color: var(--cyan); opacity: 1; }
       </div>
 
       <div class="hero-badge-panel">
-        <!-- Replace hero-img-placeholder with <img src="assets/images/hero-banner.webp"> when ready -->
-        <div class="hero-img-placeholder">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,196,232,0.4)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          <span>hero-banner.webp</span>
+        <div class="hero-img-wrap">
+          <img src="assets/images/hero-banner.webp" alt="Enterprise IT Infrastructure — circuit board abstract" style="width:100%;border-radius:12px;border:1px solid rgba(0,196,232,0.12);box-shadow:0 0 40px rgba(0,196,232,0.06);">
         </div>
         <div class="badge-card">
           <div class="badge-icon cyan">🛡️</div>
@@ -914,7 +912,14 @@ footer a:hover { color: var(--cyan); opacity: 1; }
 <hr class="divider">
 
 <!-- ─── ABOUT ─────────────────────────────────────────────────────── -->
-<section class="section" id="about">
+<section class="section" id="about" style="position:relative;overflow:hidden;">
+  <!-- Background server room image -->
+  <div style="position:absolute;inset:0;z-index:0;pointer-events:none;">
+    <img src="assets/images/hero-banner1.webp" alt="" aria-hidden="true"
+      style="width:100%;height:100%;object-fit:cover;opacity:0.06;filter:saturate(0.5);">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--bg) 30%, transparent 60%, var(--bg) 100%);"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, var(--bg) 0%, transparent 20%, transparent 80%, var(--bg) 100%);"></div>
+  </div>
   <div class="container">
     <div class="section-label">Background</div>
     <h2 class="section-title">Built for both the boardroom<br>and the terminal.</h2>
@@ -955,6 +960,12 @@ footer a:hover { color: var(--cyan); opacity: 1; }
   <div class="container">
     <div class="section-label">Technical Stack</div>
     <h2 class="section-title">Core Competencies</h2>
+    <!-- Skills visual banner -->
+    <div style="margin-bottom:40px;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;max-height:200px;">
+      <img src="assets/images/skills-visual.webp" alt="Azure, Linux, Docker, Security — technology ecosystem" style="width:100%;height:200px;object-fit:cover;object-position:center;display:block;">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--bg) 0%, transparent 25%, transparent 75%, var(--bg) 100%);"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent 40%, var(--bg-card) 100%);"></div>
+    </div>
     <div class="skills-grid">
       <!-- Microsoft / Identity -->
       <div class="skill-category fade-up">
@@ -1091,6 +1102,13 @@ footer a:hover { color: var(--cyan); opacity: 1; }
         </div>
         <div class="timeline-card">
           <div class="timeline-section-title">PCI DSS 4.0.1 Readiness &amp; Certification</div>
+          <!-- Compliance visual -->
+          <div style="margin:12px 0 16px;border-radius:10px;overflow:hidden;border:1px solid var(--border);position:relative;height:140px;">
+            <img src="assets/images/compliance-visual.webp" alt="PCI DSS compliance — shield and vault" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+            <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,18,32,0.7) 0%,transparent 40%,transparent 60%,rgba(12,18,32,0.7) 100%);"></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(12,18,32,0.85) 100%);"></div>
+            <div style="position:absolute;bottom:12px;left:16px;font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:0.08em;">✓ PCI DSS 4.0.1 — ALL REQUIREMENTS PASSED</div>
+          </div>
           <ul class="timeline-bullets">
             <li>Led organization through full PCI DSS 4.0.1 certification — all applicable requirements passed.</li>
             <li>Owned complete compliance lifecycle: gap analysis, remediation, SOPs, evidence repository, and audit readiness.</li>
@@ -1277,6 +1295,16 @@ footer a:hover { color: var(--cyan); opacity: 1; }
   <div class="container">
     <div class="section-label">Open Source</div>
     <h2 class="section-title">GitHub Portfolio</h2>
+    <!-- Projects banner -->
+    <div style="margin-bottom:40px;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;height:160px;">
+      <img src="assets/images/projects-banner.webp" alt="Code and circuit board — projects background" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right, var(--bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%);"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom, transparent 20%, rgba(6,9,18,0.6) 100%);"></div>
+      <div style="position:absolute;bottom:20px;left:28px;right:28px;display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-family:var(--mono);font-size:12px;color:var(--cyan);letter-spacing:0.1em;">20 PUBLIC REPOSITORIES</span>
+        <a href="https://github.com/suresh-1001" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--text-2);letter-spacing:0.08em;border:1px solid var(--border-lit);padding:5px 12px;border-radius:4px;">github.com/suresh-1001 ↗</a>
+      </div>
+    </div>
     <div class="projects-grid">
 
       <a href="https://github.com/suresh-1001/m365-cis-assessor" target="_blank" class="project-card">
